@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./output.css" rel="stylesheet">
+  <title>Home-Venco All-in-one Community</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    // Toggle mobile menu
+    function toggleNavbar() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    // Toggle dropdown (mobile and desktop)
+    function toggleDropdown(id) {
+      document.getElementById(id).classList.toggle('hidden');
+    }
+  </script>
+</head>
+<body>
+  
+
+  <!-- Navbar -->
+  <nav class="bg-[#11302d] fixed top-0 left-0 w-full border-b-[0.5px] border-gray-700 z-10">
+    <div class="mx-auto px-4 sm:px-6 ">
+      <div class="flex justify-between h-20">
+        <!-- Left Section (Logo) -->
+        <div class="flex items-center">
+          <a href="./index.html" class="text-[#D4F59E] text-2xl font-bold">
+            <img src="../images/asset 0.svg" alt="Venco Logo" class="transform transition-transform duration-300 hover:scale-110 w-32"> 
+          </a>
+        </div>
+        <div class="flex space-x-10">
+        <!-- Hamburger Menu for Mobile -->
+        <div class="lg:hidden flex items-center">
+          <button onclick="toggleNavbar()" class="text-gray-300 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Center Section (Links) -->
+        <div class="hidden lg:flex space-x-11 text-white items-center">
+          <!-- Products Dropdown -->
+          <div class="relative group">
+            <button class="flex items-center space-x-1 hover:text-[#cbf07f]" onclick="toggleDropdown('products-dropdown')">
+              <span>Products</span>
+              <!-- Arrow down (default) -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+              <!-- Arrow up (on hover) -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden group-hover:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+              </svg>
+            </button>
+            <!-- Dropdown -->
+            <div id="products-dropdown" class="absolute left-0 hidden p-3 group-hover:block bg-white text-black shadow-lg mt-2 w-64 rounded md:group-hover:block">
+              <a href="./products/venco-for-Resident.html" class="block px-4 py-2 mt-3 hover:bg-[#cbf07f] hover:rounded-md">Venco for Residents</a>
+              <a href="./products/facilty-managers.html" class="block px-4 py-2 hover:bg-[#cbf07f] hover:rounded-md">Venco for Facility Managers</a>
+              <a href="./products/venco-for-security.html" class="block px-4 py-2 hover:bg-[#cbf07f] hover:rounded-md">Venco for Security</a>
+              <a href="./products/smart-meters.html" class="block px-4 py-2 hover:bg-[#cbf07f] hover:rounded-md mb-3">Smart Meters</a>
+            </div>
+          </div>
+
+          <a href="./blog.html" class="text-[#cbf07f]">Blog</a>
+          <a href="./contact.html" class="hover:text-[#cbf07f]">Contact Us</a>
+          <a href="./about.html" class="hover:text-[#cbf07f]">About Us</a>
+          <a href="./referral-program.html" class="hover:text-[#cbf07f]">Referral Program</a>
+        </div>
+
+        <!-- Right Section (Flag, Button) -->
+        <div class="hidden lg:flex items-center space-x-4">
+          <!-- Country Selector -->
+          <div class="relative group">
+            <button class="flex items-center border border-gray-400 rounded-md p-2 space-x-1" onclick="toggleDropdown('country-dropdown')">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/800px-Flag_of_Nigeria.svg.png" alt="Nigeria Flag" class="h-4">
+              <!-- Arrow down (default) -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:hidden text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+              <!-- Arrow up (on hover) -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden group-hover:block text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+              </svg>
+            </button>
+            <!-- Country Dropdown -->
+            <div id="country-dropdown" class="absolute hidden group-hover:block bg-white text-black shadow-lg mt-2 w-28 rounded">
+              <h1 class="text-xs ml-3 flex">SELECT REGION</h1> 
+              <a href="#" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><ion-icon name="globe-outline" class="pt-1"></ion-icon> Global</a>
+              <a href="#" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><img src="../images/flag.png" alt="" class="w-6">Nigeria</a>
+              <a href="#" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><img src="../images/ghana.png" alt="" class="w-6">Ghana</a>
+              <a href="" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><img src="../images/kenya.png" alt="" class="w-8">Kenya</a>
+            </div>
+          </div>
+
+          <!-- Get Started Button -->
+          <a href="./get-sarted.html" class="bg-[#D4F59E] text-black px-4 py-3 rounded-md font-semibold hover:bg-[#bce86f]">
+            Get Started
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden text-black bg-white rounded-b-3xl">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <!-- Products Dropdown for Mobile -->
+        <div class="relative">
+          <button class="flex items-center space-x-1 w-full text-black hover:text-gray-300" onclick="toggleDropdown('mobile-products-dropdown')">
+            <span class="font-semibold text-gray-400">Products</span>
+            <!-- Arrow down (default) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Products Dropdown for Mobile -->
+          <div id="mobile-products-dropdown" class="hidden bg-white text-black mt-2 p-2 border-t-2 border-dotted pt-3">
+            <a href="./products/venco-for-Resident.html" class="block px-4 py-2 mt-3 hover:bg-[#cbf07f] hover:rounded-md">Venco for Residents</a>
+              <a href="./products/facilty-managers.html" class="block px-4 py-2 hover:bg-[#cbf07f] hover:rounded-md">Venco for Facility Managers</a>
+              <a href="./products/venco-for-security.html" class="block px-4 py-2 hover:bg-[#cbf07f] hover:rounded-md">Venco for Security</a>
+              <a href="./products/smart-meters.html" class="block px-4 py-2 hover:bg-[#cbf07f] hover:rounded-md mb-3">Smart Meters</a>
+          </div>
+        </div>
+
+        <a href="./blog.html" class="text-gray-400 hover: block px-3 py-2 font-semibold">Blog</a>
+        <a href="./contact.html" class="text-gray-400 hover: block px-3 py-2 font-semibold">Contact Us</a>
+        <a href="./about.html" class="text-gray-400 hover: block px-3 py-2 font-semibold">About Us</a>
+        <a href="./referral-program.html" class="text-gray-400 hover: block px-3 py-2 font-semibold">Referral Program</a>
+        <div class="border-t-2 pt-2">
+          <div class="lg:hidden items-center">
+            <!-- Country Selector -->
+            <div class="relative group">
+              <div class="flex justify-between py-3 px-2 border-gray-400 rounded-md bg-gray-100" onclick="toggleDropdown('country-dropdown')">
+                <div class="flex space-x-3 ">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Flag_of_Nigeria.svg/800px-Flag_of_Nigeria.svg.png" alt="Nigeria Flag" class="w-7">
+                <h1 class="">Nigeria</h1>
+                </div>
+                <div>
+                <!-- Arrow down (default) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 group-hover:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                <!-- Arrow up (on hover) -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden group-hover:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                </svg>
+                </div>
+              <!-- Country Dropdown -->
+              <div id="country-dropdown" class="absolute hidden group-hover:block bg-white text-black shadow-lg mt-5 w-28 rounded">
+                <h1 class="text-xs ml-3 flex">SELECT REGION</h1> 
+                <a href="#" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><ion-icon name="globe-outline" class="pt-1"></ion-icon> Global</a>
+                <a href="#" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><img src="../../images/flag.png" alt="" class="w-6">Nigeria</a>
+                <a href="#" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><img src="../../images/ghana.png" alt="" class="w-6">Ghana</a>
+                <a href="#" class="flex gap-3 pl-3 py-2 hover:bg-[#cbf07f] hover:rounded-md"><img src="../../images/kenya.png" alt="" class="w-8">Kenya</a>
+              </div>
+              
+            </div>
+        </div>
+        <a href="./get-sarted.html">
+                <div class="bg-[#cbf07f] font-semibold my-2 py-3 flex justify-center rounded-lg">Get Started</div>
+              </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="pt-20">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio repellat obcaecati facere, esse voluptates dolorem ipsam eos laudantium nostrum, ea quo voluptatibus hic! Animi omnis ratione laboriosam, iusto sed quidem nobis. Inventore fugiat eos, amet a iusto deserunt nemo veritatis consequuntur ullam tempora. Ad, amet. Fugiat eum voluptas, fugit natus consectetur deserunt cumque magni nisi modi non voluptatum repellendus est id quae, beatae iure repellat! Suscipit sed dolorum porro aliquam. Debitis exercitationem impedit unde excepturi porro qui error quidem libero ut deleniti distinctio doloremque at nisi, iste necessitatibus tenetur! Id asperiores ipsam omnis magni vero ea molestiae earum eveniet labore rerum. Aliquam sequi itaque dolore sunt incidunt iusto magni, praesentium dignissimos, beatae tempore architecto nulla animi doloribus, ut esse. Dolorum error rerum necessitatibus. Provident nulla quidem ut odio, libero sit voluptatem? Mollitia aliquid placeat cum ad, quas quod eius ipsam magnam quasi autem voluptatum natus commodi optio veritatis nam, libero voluptatem sunt sapiente unde saepe? Rerum sequi architecto animi optio illum beatae sed ducimus non dolore dolorem, voluptatibus voluptates alias. Cumque, numquam tempore? Vel aut deleniti similique atque ab! Quasi sed impedit quidem labore pariatur amet maiores enim atque, quo explicabo quaerat voluptatem sequi officia harum. Natus reiciendis distinctio explicabo hic, culpa quibusdam, id commodi, incidunt velit ex rem. Suscipit adipisci iusto perferendis impedit quae harum et deleniti itaque minima tempore tempora sunt accusantium praesentium nesciunt recusandae similique, cumque a blanditiis sint sed animi qui ab ad facere. Ab amet provident, corrupti error temporibus consequatur autem consectetur iste, omnis itaque est culpa quas sed delectus veritatis nisi quae dolorum nulla, sint fugit laboriosam! Placeat fugiat id quisquam dolorem, rerum neque, facere aut harum soluta quod, dolor necessitatibus ut sint possimus ducimus corporis. Placeat, alias labore minima amet aliquid dicta ipsum sunt similique excepturi officiis id facilis blanditiis nobis earum est rerum quam ipsam et voluptas neque assumenda saepe eos impedit? Fugiat eum autem alias voluptatum, quidem quam repellat sed temporibus cupiditate aperiam rerum libero officia! Natus iusto accusantium voluptatem cum consectetur numquam id! Necessitatibus perferendis consequatur nostrum reiciendis! Perferendis quod cumque vitae reprehenderit eligendi, voluptatum sunt natus officiis, culpa illo laborum quis dolor fugit voluptates ipsa temporibus error minus sed debitis! Natus eius et aut error deserunt deleniti quidem, quae quis! Nemo, animi perferendis. Aspernatur, tenetur dolor, tempora doloribus suscipit distinctio sit minima delectus error amet incidunt deserunt nesciunt quasi est omnis officiis laboriosam natus expedita. Placeat sed voluptate at beatae, tempora deserunt voluptates corporis eos officiis doloremque facere, iure aliquam dolore fugit repellendus dolorum sunt ducimus doloribus sit. Ut accusantium nulla mollitia quam eos distinctio doloremque minus esse, vel consectetur suscipit blanditiis doloribus accusamus libero modi labore debitis placeat asperiores! Reprehenderit molestiae pariatur soluta perspiciatis consequatur, cum veritatis fugiat quia maxime ipsum facere debitis ratione fugit, ab dolor nesciunt repellat laudantium aut asperiores aliquam dolore. Cum, voluptas laboriosam molestiae praesentium facere, assumenda provident libero consectetur rem quas ex tempore vitae culpa aspernatur aperiam! Labore porro eaque optio quae libero ea doloremque culpa nisi incidunt, suscipit, voluptas cumque modi a aspernatur. Placeat maxime voluptatum quidem, eius error necessitatibus esse recusandae, repellendus fugit a, cumque cupiditate temporibus. Praesentium et ratione maxime exercitationem iste dolor. In, recusandae! Iste totam error necessitatibus. Necessitatibus facere assumenda sit eius qui voluptate nam, a est mollitia? Ex, architecto. Ipsam minus, odit, quaerat ex at alias rerum placeat atque corrupti aliquid, assumenda repellat molestias repellendus? Voluptates perspiciatis voluptatibus aperiam et cum adipisci officiis earum dignissimos neque, tenetur repellendus quia ullam repudiandae eaque quis ex praesentium inventore mollitia temporibus deserunt! Doloremque officiis illum voluptas velit aliquam id porro esse quia eveniet. Ea ipsum consectetur tempore ipsam delectus sint placeat obcaecati beatae asperiores. Quae nemo sint dicta nobis illum quibusdam minus. Ipsa magni hic eos excepturi, eaque dolorem sequi architecto maiores molestiae! Provident, eius odit dicta vero officia deleniti delectus explicabo sequi natus ex exercitationem et cupiditate corrupti maxime tempora! Temporibus nesciunt eos odit eligendi enim sunt dolorum mollitia deleniti obcaecati quisquam quasi amet aperiam minima adipisci illo ad, tempora eaque, cumque voluptatem! Beatae soluta accusantium, porro rerum deserunt assumenda? Rem, eligendi architecto impedit accusamus id quas ut ipsam nobis? Explicabo nesciunt, cumque commodi deleniti illum ea voluptate accusamus nostrum minus amet hic, et saepe. Quas sed numquam rerum. Aliquam corporis molestias voluptatibus vitae amet perspiciatis adipisci, eaque pariatur voluptatem minima porro culpa earum, consectetur accusamus doloribus placeat quia iste consequatur, qui facere ad ullam maxime fuga! Rerum doloremque ex nesciunt ab natus quia amet assumenda veritatis, repellat praesentium autem vitae asperiores distinctio ut minima. Ex error nulla dolore eaque expedita tempore illo voluptates, iure obcaecati impedit illum quaerat fugiat debitis veniam quo libero. Veritatis neque excepturi quae deserunt quia maxime architecto placeat pariatur, provident molestiae nihil quidem sapiente quaerat debitis dicta eum vero in, eveniet eius sed animi corrupti error recusandae? A reprehenderit cumque dolorem repudiandae sapiente exercitationem voluptatibus magni laboriosam aperiam eaque, officia et excepturi suscipit quas veritatis. Quas illum officiis atque incidunt esse veniam non dolore perspiciatis deserunt suscipit corporis nam saepe enim dicta maxime iste, facere laboriosam, eos voluptates corrupti perferendis molestias. Quod, dignissimos voluptatum odio ipsam aspernatur harum maiores dolor doloremque corrupti modi vitae tempora deleniti veritatis velit quibusdam asperiores! Officia optio, animi unde labore quia saepe eum cum exercitationem rerum! Eaque voluptatibus iusto velit porro? Excepturi laboriosam delectus tempore amet cupiditate illum rem accusantium earum ad, recusandae minus quo accusamus saepe eveniet itaque? Animi beatae ipsam, optio quo repellat voluptatem, ipsa sed eius quidem sunt exercitationem perferendis nostrum! Nobis ipsam, maiores est atque earum error corrupti? Voluptas commodi facilis, aliquam error cupiditate mollitia tenetur a praesentium autem omnis! Exercitationem illum magnam eum numquam nisi minima? Inventore officiis aut magnam eos laudantium nostrum nemo voluptate corrupti illum, quia architecto soluta laboriosam enim explicabo rem temporibus cumque quaerat, nesciunt aspernatur. Officiis eum ullam suscipit in at placeat. Officiis eum modi dolorum expedita. Sapiente dignissimos a ab. Repudiandae quas repellendus pariatur quo reprehenderit voluptatum cum aut vero consectetur assumenda molestias corrupti accusantium hic suscipit ullam, sint sed tempore sit obcaecati. Praesentium optio non quibusdam impedit ex delectus dicta recusandae quaerat dolorum possimus, sapiente a earum, quos corporis iure illum dignissimos. Quibusdam temporibus consectetur culpa exercitationem deleniti recusandae placeat impedit accusamus iusto commodi dolorem sunt repellendus numquam perferendis voluptatum ut reiciendis totam reprehenderit praesentium officia, qui eligendi! Est voluptate pariatur odit ut quos reprehenderit facere fugiat itaque explicabo dolor ducimus neque quidem aperiam possimus fuga dolore, facilis ipsum amet delectus at eos ad animi eum magnam? Voluptate aliquid quidem quis adipisci omnis odit repellendus dignissimos vel excepturi veniam odio quas, impedit accusamus voluptates, fuga quisquam vitae animi sequi unde officia dolorum enim maiores delectus. Iusto, enim laudantium. Quam minima veritatis mollitia amet atque dolorum nisi incidunt quis esse, praesentium perspiciatis? Repellendus enim, laudantium expedita ea cupiditate magnam eius! Quae vero quaerat dolore, cumque aliquid laboriosam temporibus expedita aut accusamus id rerum voluptatem asperiores fugit eius, enim in? Quae accusantium obcaecati voluptatem, ad soluta repudiandae qui harum esse aut, reprehenderit eveniet praesentium vero quas assumenda delectus odit animi cum architecto pariatur deserunt minima quaerat eligendi ipsum! Ducimus rem id consequatur eos blanditiis corrupti dolorum odit quibusdam, laborum unde, qui nulla laboriosam odio labore porro alias earum, quod possimus velit cum similique ab deleniti. Quae quo ipsum, commodi voluptas enim quaerat fugit maxime odit sit reprehenderit fugiat placeat aliquam laboriosam quidem? Neque quod incidunt consectetur adipisci tenetur maxime error ab fugit facilis ad perspiciatis quidem sunt alias placeat omnis amet corrupti, iste eius repellat ullam eligendi laboriosam, nulla soluta illo. Vitae earum voluptatem inventore cumque omnis quidem quibusdam deserunt! In optio assumenda, tenetur voluptate, fugiat vitae atque suscipit quis cupiditate placeat quae quaerat accusamus. Perferendis ipsa est delectus animi asperiores excepturi dicta corrupti pariatur culpa assumenda libero, quia totam nulla ea soluta et? Repudiandae amet, repellendus hic ipsa fuga cumque vel quos dolor maxime veniam odio est. Ex totam, provident omnis soluta ipsam ipsum vel illo nemo repellendus iste voluptates eius, sit tempora corporis, quae repellat! Necessitatibus praesentium nemo autem perferendis nulla commodi, ipsam voluptatibus natus repellendus fugit excepturi sit quisquam molestias consectetur perspiciatis quia dolorem, quam totam cumque? Libero, quod aspernatur. Culpa, fugiat rem! Odio quam sed illum explicabo laborum accusamus, animi, sequi inventore vitae distinctio quas. Culpa, voluptate aperiam dolores nisi deserunt rerum eligendi nihil odit iste, dicta deleniti nesciunt quae velit. Commodi unde dolore cum, ipsa dicta tempore in nobis beatae repellendus. Dolorem ipsum mollitia tenetur officiis velit iusto harum tempore commodi necessitatibus laboriosam architecto ut unde, distinctio minima aliquid, accusantium hic quibusdam animi. Impedit iste harum veritatis ullam? Labore amet dicta in voluptates aliquam aspernatur libero voluptatibus quidem, minus error possimus facere, explicabo excepturi sunt quaerat quos, recusandae magnam. Iste, obcaecati! Repudiandae harum assumenda sint error ducimus iure veritatis, exercitationem modi corrupti eos impedit deserunt vero incidunt in sapiente, porro, qui repellat. Cupiditate ducimus, doloremque nihil animi at quidem necessitatibus aliquam exercitationem, sed saepe expedita commodi libero quo voluptate quisquam harum hic sapiente excepturi reprehenderit. Dignissimos sunt quam veniam eveniet ea quos voluptatibus! Deserunt repudiandae libero impedit velit enim quis atque vitae accusamus expedita ullam! Eius distinctio necessitatibus ipsam amet in? Optio reprehenderit at obcaecati, repellat omnis, itaque nihil facilis neque repellendus quisquam a molestiae. Tenetur neque ducimus alias possimus quos rem molestiae animi veritatis labore vitae ex dolor, maiores, repudiandae natus omnis necessitatibus temporibus quia libero amet exercitationem optio commodi odit porro doloremque. Non aliquam esse impedit nostrum, sapiente exercitationem voluptas amet aliquid. Earum labore ducimus commodi esse nemo accusantium deserunt at ut quasi sed quam, magnam veritatis? Quam earum veritatis vel atque! Accusantium itaque dolorem recusandae laborum? Error consequatur assumenda aspernatur deleniti magni aliquid quae atque dolore, perspiciatis iure expedita consectetur maiores officia eligendi necessitatibus optio labore molestias, ducimus, itaque et quis? Consequuntur vitae labore quia laudantium, itaque asperiores adipisci optio, voluptatibus eveniet laborum neque libero doloribus aperiam vel totam modi. Delectus cumque corrupti eligendi a hic deleniti doloremque? Doloribus deserunt iste id laboriosam dolorem tempora, aliquid pariatur quod dicta delectus voluptate! Aut quasi laboriosam nostrum nobis beatae assumenda, deserunt facilis. Veritatis consectetur at voluptatibus perspiciatis alias ullam recusandae sunt nobis quibusdam vero tempore laboriosam corrupti nostrum unde, deleniti natus ad quas ipsa sit optio. Excepturi itaque labore, soluta veniam animi aut minima atque. Fugiat, suscipit. Facilis, odit magni. Tempore ut, nobis pariatur molestiae sit id, est et dolores incidunt, repellat nisi! In, animi. Nobis, delectus? Ducimus aspernatur alias, eos incidunt dolore eveniet aliquam debitis illo sed tempora recusandae ratione quisquam magnam excepturi molestias quod rerum placeat consectetur voluptatibus autem? Voluptatum iste assumenda ipsam nihil possimus quos provident repellendus maiores saepe a mollitia doloribus, debitis ea, sit, ut similique distinctio eligendi! Temporibus ipsum excepturi nihil. Deleniti eius, corrupti laudantium sint nesciunt animi molestias corporis vitae beatae similique. Minus perspiciatis ut ratione unde voluptate quaerat? Saepe, a accusamus? Quo, vel enim molestias placeat eaque dignissimos incidunt non unde modi vitae obcaecati labore quas! Fuga quo aliquam nihil fugit doloremque nesciunt sint ipsa! Optio nemo non explicabo vel doloremque deleniti blanditiis alias, voluptatibus rerum odio amet itaque consequuntur totam aliquid dolore reiciendis, excepturi cumque ut, neque accusamus hic ad. Quibusdam, accusamus cupiditate! Suscipit similique aliquid unde exercitationem assumenda atque illo accusantium, quisquam quod hic, quam consequuntur, facilis nostrum. Impedit recusandae deserunt est esse numquam, obcaecati inventore quidem sequi cumque expedita consequuntur neque in illo atque laudantium nostrum labore! Assumenda officia, quisquam eos quas saepe enim accusantium expedita porro dolorem iure dolorum tempora maxime nesciunt fugiat blanditiis. Debitis perspiciatis, magnam laborum quo facilis fugit architecto quibusdam corporis tempora! Rem animi earum impedit exercitationem neque iure non ratione, voluptates ducimus repudiandae eaque in omnis? Obcaecati doloribus earum inventore quia sapiente vel, saepe qui aut perspiciatis omnis dolore tempore fuga voluptates laudantium blanditiis. Voluptas praesentium soluta et autem laboriosam impedit ratione id enim quasi sapiente doloribus quia quis at cum, unde eum, perferendis necessitatibus aperiam atque nam sed libero! Laudantium et incidunt enim sint consectetur. Cum beatae incidunt minus rerum dolorem odio molestiae at repellat, omnis modi asperiores obcaecati perferendis mollitia autem maxime, ab id! A, quos consequatur, voluptatum illum molestias neque nemo unde dolorem eum fuga debitis.
+  </div>
+
+
+
+
+
+  <footer class="bg-black">
+    <!-- footer section 1 -->
+    <div class="lg:pt-40 lg:pb-20 border-b-[0.2px] border-gray-500 lg:flex lg:justify-between mx-5">
+      <!-- footer logo  -->
+      <div class="lg:grid text-white gap-2 hidden">
+        <img src="../images/asset 0.svg" alt="" class="w-40">
+        <h1 class="capitalize italic font-semibold">simplify living experiences</h1>
+      </div>
+      <!-- footer form  -->
+      <div>
+        <form action="" class="md:justify-between grid gap-5 pt-14 md:flex">
+          <label for="" class="text-white md:flex hidden w-[100%] pt-4">Subscribe to our newsletter</label>
+          <label for="" class="text-white md:hidden flex justify-center">Subscribe to our newsletter</label>
+          <input type="email" placeholder="What's your email?" class="bg-transparent border-gray-500 border-[1px] py-5 pl-4 rounded-xl lg:pr-52 text-white w-[100%]">
+          <button class="bg-[#cbf07f] text-[#0A3B38] font-bold py-5 px-12 text-lg rounded-xl ">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <!-- second section  -->
+    <div class="py-20 grid md:grid-cols-2 mx-5 border-b-[0.5px] border-gray-500">
+      <!-- footer download  -->
+      <div class=" space-y-3    ">
+        <h1 class="text-white font-semibold md:flex md:justify-start flex justify-center">Download our app</h1>
+        <div class="flex space-x-3 ">
+          <a href="https://apps.apple.com/us/app/venco-estate-app/id1542447397">
+          <img src="../images/Appstore.svg" alt="" class="w-[100%] md:w-40">
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.manqala.estatemanager&pli=1">
+          <img src="../images/Google play.svg" alt="" class="w-[100%] md:w-40">
+          </a>
+        </div>
+        <div class="md:flex md:justify-start flex justify-center pb-10">
+        <img src="../images/NDPR AUDIT.png" alt="" class="w-48 pt-16">
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 grid-cols-2 gap-20 md:gap-0">
+        <!-- company footer  -->
+        <div class="space-y-5">
+            <h1 class="text-gray-400">Company</h1>
+            <ul class="text-white font-semibold grid gap-4">
+             <li><a href="/src/about.html">About</a></li>
+             <li><a href="#">FAQs</a></li>
+             <li><a href="/src/contact.html">Contact Us</a></li>
+             <li><a href="/src/referral-program.html">Referral Program</a></li>
+             <li><a href="#">Privacy Policy</a></li>
+             <li><a href="#">Terms of Service</a></li>
+            </ul>
+            </div>
+            <div class="space-y-5">
+             <h1 class="text-gray-400">Products</h1>
+             <ul class="text-white font-semibold space-y-4">
+               <li><a href="/src/products/venco-for-Resident.html">Venco for Residents</a></li>
+               <li><a href="/src/products/facilty-managers.html">Venco for Facility Managers</a></li>
+               <li><a href="/src/products/venco-for-security.html">Venco for Security</a></li>
+               <li><a href="/src/products/smart-meters.html">Smart Meters</a></li>
+             </ul>
+            </div>
+         <div>
+          <h1 class="text-gray-400">Follow Us</h1>
+          <ul class="flex space-x-4 pt-3">
+            <li><a href="https://play.google.com/store/apps/details?id=com.manqala.estatemanager&pli=1" target="_blank"><img src="../images/task38.svg" alt="" class="w-8 bg-white rounded-md"></a></li>
+            <li><a href="https://x.com/vencohq" target="_blank"><img src="../images/task39.svg" alt="" class="w-8 rounded-2xl"></a></li>
+            <li><a href="https://www.instagram.com/vencohq/" target="_blank"><img src="../images/task40.svg" alt="" class="w-8 bg-white text-white rounded-md"></a></li>
+            <li><a href="https://www.linkedin.com/company/Venco-hq/" target="_blank"><img src="../images/task41.svg" alt="" class="w-8 bg-white text-white rounded-md"></a></li>
+          </ul>
+         </div>
+      </div>
+      
+    </div>
+<!-- third section  -->
+      <div class="md:pt-20 md:pb-40 pt-10 pb-20 px-10">
+        <!-- copyright -->
+         <span class="text-white md:font-semibold flex justify-center w-full">Design by dervac Gold-class 2024<a href="#" class="underline text-[#cbf07f]">Privacy policy</a></span>
+      </div>
+  </footer>
+</body>
+</html>
